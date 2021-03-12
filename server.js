@@ -65,14 +65,14 @@ client.on('message', (message) => {
 
 
 
-//募集コード
+//募集
 client.on("message", msg => {
   if (msg.content === "/アマアス募集") {
     msg.channel.send("アマングアスする人いますか@everyone？");
   }
 });
 
-//risaの紹介
+//紹介
 client.on("message", msg => {
   if (msg.content === "keinの紹介") {
     msg.channel.send(
@@ -82,7 +82,7 @@ client.on("message", msg => {
 });
 
 
-//サーバー　検索
+//検索
 client.on("message", msg => {
   if (msg.content === "招待コード") {
     msg.channel.send("https://discord.gg/PrdeNXebv2");
@@ -108,7 +108,7 @@ console.log(array[Math.floor(Math.random() * array.length)]);
 
 
 
-//いじらない
+
 if (process.env.DISCORD_BOT_TOKEN == undefined) {
   console.log("DISCORD_BOT_TOKENが設定されていません。");
   process.exit(0);
