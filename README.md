@@ -1,1 +1,3 @@
 # keinbot
+
+Mute bot
