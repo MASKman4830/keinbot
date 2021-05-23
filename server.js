@@ -187,6 +187,53 @@ client.on("message", message => {
   }
 });
 
+//グローバルチャット
+ client.on('message', message =>
+ {
+     if (message.channel.name === 'グローバルチャット')
+     {
+         if (message.author.bot) return;
+         if (message.attachments.size <= 0)
+         {
+             message.delete()
+         }
+         client.channels.cache.forEach(channel =>
+         {
+             if (message.attachments.size <= 0)
+             {
+                 const embed = new discord.MessageEmbed()
+                     .setAuthor(message.author.tag, message.author.avatarURL())
+                     .setDescription(message.content)
+                     .setColor(0x2C2F33)
+                     .setFooter(message.guild.name, message.guild.iconURL())
+                     .setTimestamp()
+                 if (channel.name === 'グローバルチャット')
+                 {
+                     channel.send(embed)
+                     return;
+                 }
+                 return;
+             }
+             if (!message.attachments.forEach(attachment =>
+             {
+                 const embed = new discord.MessageEmbed()
+                     .setAuthor(message.author.tag, message.author.avatarURL())
+                     .setImage(attachment.url)
+                     .setDescription(attachment.url)
+                     .setColor(0x2C2F33)
+                     .setFooter(message.guild.name, message.guild.iconURL())
+                     .setTimestamp()
+                 if (channel.name === 'グローバルチャット')
+                 {
+                     channel.send(embed)
+                     return;
+                 }
+                 return;
+             }));
+             return;
+         });
+     }
+ })
 //スプレットシート
 client.on("message", message => {
   if (message.content === "k!Amongus") {
